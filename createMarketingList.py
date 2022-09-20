@@ -7,9 +7,9 @@
 # below (first 2 and last 2 elements shown only):
 
 #{'Tommie Goody': {'email': 'tgoody0@weather.com', 'phone': '809-992-7298'}, 
-# 'Obadiah Godfery': {'email': 'ogodfery1@a8.net', 'phone': '560-745-9361'}......
-# ..........'Kessiah Tynemouth': {'email': 'ktynemouthdu@ning.com', 'phone': '690-215-8097'}, 
-# 'Carmela Kaubisch': {'email': 'ckaubischdv@wikia.com', 'phone': '307-726-6526'}}
+ #'Obadiah Godfery': {'email': 'ogodfery1@a8.net', 'phone': '560-745-9361'}......
+#..........'Kessiah Tynemouth': {'email': 'ktynemouthdu@ning.com', 'phone': '690-215-8097'}, 
+ #'Carmela Kaubisch': {'email': 'ckaubischdv@wikia.com', 'phone': '307-726-6526'}}
 
 
 # Using the dictionary, write the contents to a csv file. The output file shoud be exactly as
@@ -34,7 +34,7 @@ writer = csv.writer(VendorList)
 # create an output file
 
 with open('outputfile', 'w') as outputfile:
-    outputfile.writelines('VendorList')
+    outputfile.writelines('MarketingListFINAL.csv')
 
 # create an empty dictionary
 
@@ -44,7 +44,7 @@ empty_dictionary = dict()
 
 from csv import reader
 
-with open('VendorList.csv', 'r') as readlist:
+with open('MarketingListFINAL.csv', 'r') as readlist:
 
     readlist = reader(readlist)
 
@@ -56,17 +56,23 @@ with open('VendorList.csv', 'r') as readlist:
 
     # add the key-value pair to the dictionary
 
-VendorList = {'id:50001, first_name:Tommy, last_name:Goody, gender:Male, email: tgoody0@weather.com, phone: 809-992-7298'}
+empty_dictionary = {}
+empty_dictionary=[id] ='50001'
+empty_dictionary=[ first_name]='Tommy'
+empty_dictionary=[last_name]='Goody'
+empty_dictionary=[gender]='Male'
+empty_dictionary=[email]='tgoody0@weather.com'
+empty_dictionary=[phone]='809-992-7298'
 
 # print the dictionary after the loop is finished
 
-print(VendorList)
+print(empty_dictionary)
 
 # iternate through the dictionary and write to the output file
 
-for id, first_name, last_name, gender, email, phone in VendorList():
+for id, first_name, last_name, gender, email, phone in empty_dictionary():
     print ('This is the full Vendor List')
-    outputfile=open('VendorList.csv','w')
+    outputfile=open('MarketingListFINAL.csv','w')
     outputfile.write(id)
     outputfile.write(first_name)
     outputfile.write(last_name)
