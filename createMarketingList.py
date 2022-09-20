@@ -24,56 +24,57 @@
 import csv
 
 # open the vendorlist file
-
+VendorList = open("VendorList.csv", "r")
+print(VendorList.read())
 
 # create a csv object from the file object
+writer = csv.writer(VendorList)
 
 
 # create an output file
 
-
-
-
+with open('outputfile', 'w') as outputfile:
+    outputfile.writelines('VendorList')
 
 # create an empty dictionary
 
-
+empty_dictionary = dict()
 
 # iterate through the csv object
 
+from csv import reader
+
+with open('VendorList.csv', 'r') as readlist:
+
+    readlist = reader(readlist)
+
+    for row in readlist:
+    
+        print(row)
 
 
 
     # add the key-value pair to the dictionary
 
-
+VendorList = {'id:50001, first_name:Tommy, last_name:Goody, gender:Male, email: tgoody0@weather.com, phone: 809-992-7298'}
 
 # print the dictionary after the loop is finished
 
-
+print(VendorList)
 
 # iternate through the dictionary and write to the output file
 
+for id, first_name, last_name, gender, email, phone in VendorList():
+    print ('This is the full Vendor List')
+    outputfile=open('VendorList.csv','w')
+    outputfile.write(id)
+    outputfile.write(first_name)
+    outputfile.write(last_name)
+    outputfile.write(gender)
+    outputfile.write(email)
+    outputfile.write(phone)
 
+outputfile.close()
 
 # close your output file
 
-def build_word_index(txt):
-    out = {}
-    for i, line in enumerate(txt.split("\n")):
-        for word in line.strip().split(" "):
-            if word not in out:
-                out[word] = [i + 1]
-            else:
-                out[word].append(i + 1)
-    return out
-
-print(build_word_index('''
-
-id,first_name,last_name,gender,email,phone
-5001,Tommie,Goody,Male,tgoody0@weather.com,809-992-7298
-5002,Obadiah,Godfery,Male,ogodfery1@a8.net,560-745-9361
-5003,Hewe,Andriulis,Male,handriulis2@auda.org.au,637-129-6073
-5004,Nicola,Schaffel,Female,nschaffel3@umn.edu,936-816-9031
-5005,Linnet,Fellgate,Female,lfellgate4@ameblo.jp,837-475-7739
-'''))
