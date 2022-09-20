@@ -1,2 +1,5 @@
 q*
 .venv/
+.quiz_1_venv
+.quiz_1_venv/
+*csv
