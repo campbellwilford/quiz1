@@ -58,3 +58,22 @@ import csv
 
 # close your output file
 
+def build_word_index(txt):
+    out = {}
+    for i, line in enumerate(txt.split("\n")):
+        for word in line.strip().split(" "):
+            if word not in out:
+                out[word] = [i + 1]
+            else:
+                out[word].append(i + 1)
+    return out
+
+print(build_word_index('''
+
+id,first_name,last_name,gender,email,phone
+5001,Tommie,Goody,Male,tgoody0@weather.com,809-992-7298
+5002,Obadiah,Godfery,Male,ogodfery1@a8.net,560-745-9361
+5003,Hewe,Andriulis,Male,handriulis2@auda.org.au,637-129-6073
+5004,Nicola,Schaffel,Female,nschaffel3@umn.edu,936-816-9031
+5005,Linnet,Fellgate,Female,lfellgate4@ameblo.jp,837-475-7739
+'''))
